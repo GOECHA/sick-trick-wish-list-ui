@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import Card from "../Card/Card";
 import './Tricks.css'
 
@@ -14,6 +14,7 @@ const tricksCards = tricks.map(trick => {
           obstacle= {trick.obstacle}
           tutorial= {trick.tutorial}
           id= {trick.id}
+          key={trick.id}
         />
     )
 })
@@ -25,4 +26,4 @@ const tricksCards = tricks.map(trick => {
     )
 }
 
-export default Tricks
+export default Tricks;

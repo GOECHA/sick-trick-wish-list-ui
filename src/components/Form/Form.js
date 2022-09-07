@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       trick: '',
       tutorial: ''
@@ -13,13 +13,14 @@ class Form extends Component {
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   }
+
   submitTrick = event => {
     event.preventDefault(); 
     const newTrick = {
       id: Date.now(),
       ...this.state
     }
-    this.props.addIdea(newTrick); 
+    this.props.addTrick(newTrick); 
     this.clearInputs();
   }
 
@@ -31,11 +32,11 @@ class Form extends Component {
   render() {
     return (
       <form>
-        <select className ="stance" id="stance" name="stance" >
-            <option value="" disabled selected>Stance</option>
-            <option value="regular">Regular</option>
-            <option value="goofy">Goofy</option>
-        </select>
+            <select className ="stance" id="stance" name="stance" >
+                <option value="" disabled selected>Stance</option>
+                <option value="regular">Regular</option>
+                <option value="goofy">Goofy</option>
+            </select>
 
         <input
           type='text'
@@ -44,15 +45,14 @@ class Form extends Component {
           value={this.state.trick}
           onChange={event => this.handleChange(event)}
         />
-        
-        <select className ="obstacle" id="obstacle" name="obstacle" >
-            <option value="" disabled selected>Obstacle</option>
-            <option value="flatground"></option>
-            <option value="ledge">Ledge</option>
-            <option value="rail">Rail</option>
-            <option value="stairs">Stairs</option>
-            <option value="pool">Pool</option>
-        </select>
+            <select className ="obstacle" id="obstacle" name="obstacle" >
+                <option value="" disabled selected>Obstacle</option>
+                <option value="flatground"></option>
+                <option value="ledge">Ledge</option>
+                <option value="rail">Rail</option>
+                <option value="stairs">Stairs</option>
+                <option value="pool">Pool</option>
+            </select>
 
         <input
           type='text'
@@ -62,7 +62,7 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
         />
 
-        <button className="send-it-btn" onClick={event => this.submitIdea(event)}>Send It!</button>
+        <button className="send-it-btn" onClick={event => this.submitTrick(event)}>Send It!</button>
       </form>
     )
   }

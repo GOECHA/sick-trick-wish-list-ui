@@ -20,8 +20,8 @@ class App extends Component {
     getAllData('/tricks').then(data=> {
       this.setState({ tricks: [...data[0]]})
     })
-  
   }
+
 
   addTrick = (newTrick) => {
     this.setState({ tricks: [...this.state.tricks, newTrick] });
@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Form addTrick={this.addTrick}/>
+        <Form addTrick={this.addTrick} tricks={this.state.tricks}/>
         {!this.state.tricks.length && <h2>No tricks, ready to hit the Park?</h2> }
         <Tricks tricks={this.state.tricks}/>
       </div>
