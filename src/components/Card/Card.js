@@ -6,8 +6,7 @@ const Card = ({stance, name, obstacle, tutorial, id}) => {
     <div className='card'>
       <h3>{stance}{name}</h3>
       <p>obstacle{obstacle}</p>
-      <a href={tutorial}>Link to Tutorial</a>
-      <button>🗑</button>
+      <a href={tutorial} >Link to Tutorial</a>
     </div>
   )
 }

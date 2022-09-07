@@ -6,8 +6,6 @@ import './Tricks.css'
 
 const Tricks = ({tricks}) => {
 
-
-
 const tricksCards = tricks.map(trick => {
     return (
         <Card 
