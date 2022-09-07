@@ -1,12 +1,15 @@
 import { Component } from 'react';
 import './App.css';
-import { getAllData} from '../../utilities'
+import { getAllData} from '../../utilities';
+import Tricks from '../Tricks/Tricks';
+import Header from '../Header/Header';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state={
-     
+     tricks: []
     }
   }
   
@@ -23,7 +26,8 @@ class App extends Component {
   render=()=> {
     return (
       <div className="App">
-        <h1>Sick Trick Wish List</h1>
+        <Header />
+        <Tricks tricks={this.state.tricks}/>
       </div>
     );
   }
