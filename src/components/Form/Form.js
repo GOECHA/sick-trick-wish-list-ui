@@ -31,12 +31,11 @@ class Form extends Component {
   render() {
     return (
       <form>
-          {/* <label for="stance" className="stance"></label> */}
-            <select className ="stance" id="stance" name="stance" >
-                <option value="" disabled selected>Stance</option>
-                <option value="regular">Regular</option>
-                <option value="goofy">Goofy</option>
-            </select>
+        <select className ="stance" id="stance" name="stance" >
+            <option value="" disabled selected>Stance</option>
+            <option value="regular">Regular</option>
+            <option value="goofy">Goofy</option>
+        </select>
 
         <input
           type='text'
@@ -45,16 +44,15 @@ class Form extends Component {
           value={this.state.trick}
           onChange={event => this.handleChange(event)}
         />
-
-        {/* <label for="obstacle" ></label> */}
-            <select className ="obstacle" id="obstacle" name="obstacle" >
-                <option value="" disabled selected>Obstacle</option>
-                <option value="flatground"></option>
-                <option value="ledge">Ledge</option>
-                <option value="rail">Rail</option>
-                <option value="stairs">Stairs</option>
-                <option value="pool">Pool</option>
-            </select>
+        
+        <select className ="obstacle" id="obstacle" name="obstacle" >
+            <option value="" disabled selected>Obstacle</option>
+            <option value="flatground"></option>
+            <option value="ledge">Ledge</option>
+            <option value="rail">Rail</option>
+            <option value="stairs">Stairs</option>
+            <option value="pool">Pool</option>
+        </select>
 
         <input
           type='text'
